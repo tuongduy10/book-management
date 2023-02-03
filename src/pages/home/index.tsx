@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Dashboard from '../../layouts/dashboard/dashboard';
 import PrimaryLayout from '../../layouts/primary/primary-layout';
 
 export default function Index() {
@@ -8,5 +9,5 @@ export default function Index() {
 }
 
 Index.getLayout = function getLayout(page: React.ReactElement) {
-    return <PrimaryLayout>{page}</PrimaryLayout>;
+    return <Dashboard>{page}</Dashboard>;
 };
