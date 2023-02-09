@@ -1,10 +1,11 @@
-const baseURL = 'https://book.com';
+import { addBook, deleteBook, getBook, getBooks, updateBook } from "../api/book.api";
+
+const baseURL = 'https://jsonplaceholder.typicode.com/Books';
 
 
-export const getBooks = async () => {
+export const getAllBooks = async () => {
     try {
-        const response = await fetch(`${baseURL}/books`);
-        const data = await response.json();
+        const { data } = await getBooks();
         return data;
     } catch (error) {
         console.error(error);
@@ -12,10 +13,9 @@ export const getBooks = async () => {
     }
 };
 
-export const getBook = async (id: any) => {
+export const getBookById = async (id: any) => {
     try {
-        const response = await fetch(`${baseURL}/books/${id}`);
-        const data = await response.json();
+        const { data } = await getBook(id);
         return data;
     } catch (error) {
         console.error(error);
@@ -23,14 +23,9 @@ export const getBook = async (id: any) => {
     }
 };
 
-export const addBook = async (data: any) => {
+export const createSingleBook = async (data: any) => {
     try {
-        const response = await fetch(`${baseURL}/books`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        });
-        const newBook = await response.json();
+        const { data: newBook } = await addBook(data);
         return newBook;
     } catch (error) {
         console.error(error);
@@ -38,28 +33,21 @@ export const addBook = async (data: any) => {
     }
 };
 
-export const updateBook = async (data: any) => {
+export const updateSingleBook = async (data: any) => {
     try {
-        const response = await fetch(`${baseURL}/books`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        });
-        const updateBook = await response.json();
-        return updateBook;
+        const { data: updatedBook } = await updateBook(data);
+        return updatedBook;
     } catch (error) {
         console.error(error);
         throw error;
     }
 };
 
-export const deleteBook = async (id: any) => {
+export const deleteSingleBook = async (id: any) => {
     try {
-        await fetch(`${baseURL}/books/${id}`, {
-          method: 'DELETE'
-        });
-      } catch (error) {
-        console.error(error);
-        throw error;
-      }
-};
+      await deleteBook(id);
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  };

@@ -1,8 +1,7 @@
 import { useMemo, useReducer } from "react";
-import { BookContext, Example1Context, Example2Context } from "./context";
+import { BookContext, PostContext } from "./context";
 import bookReducer,  { initBookState } from "../reducer/book.reducer";
-import example1Reducer, { initExample1State } from "../reducer/example1.reducer";
-import example2Reducer, { initExample2State } from "../reducer/example2.reducer";
+import postReducer, { initPostState} from "../reducer/post.reducer";
 
 function BookProvider({children}: any) {
     const [state, dispatch] = useReducer(bookReducer, initBookState);
@@ -15,26 +14,15 @@ function BookProvider({children}: any) {
     )
 }
 
-function Example1Provider({children}: any) {
-    const [state, dispatch] = useReducer(example1Reducer, initExample1State);
+function PostProvider({children}: any) {
+    const [state, dispatch] = useReducer(postReducer, initPostState);
     const providerValue = useMemo(() => ({state, dispatch}), [state, dispatch]);
     
     return (
-        <Example1Context.Provider value={providerValue}>
+        <PostContext.Provider value={providerValue}>
             {children}
-        </Example1Context.Provider>
+        </PostContext.Provider>
     )
 }
 
-function Example2Provider({children}: any) {
-    const [state, dispatch] = useReducer(example2Reducer, initExample2State);
-    const providerValue = useMemo(() => ({state, dispatch}), [state, dispatch]);
-    
-    return (
-        <Example2Context.Provider value={providerValue}>
-            {children}
-        </Example2Context.Provider>
-    )
-}
-
-export { BookProvider, Example1Provider, Example2Provider };
+export { BookProvider, PostProvider };
