@@ -1,15 +1,14 @@
-import { usePostStore } from "../../../store";
+import { usePostStore } from "../../../store/post.store";
 
 const PostList = () => {
     const [state, dispatch] = usePostStore();
-    console.log(state)
     return (
         <>
             <div>List</div>
             <ul>
-                {state.posts ?? state.posts.map((item: any) => (
+                {state.posts ? state.posts.map((item: any) => (
                     <li key={item.id}>{item.value}</li>
-                ))}
+                )) : null}
             </ul>
         </>
     )

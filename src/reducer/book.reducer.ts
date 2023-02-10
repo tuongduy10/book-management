@@ -1,9 +1,9 @@
-const initBookState = {
+export const initBookState = {
     books: [],
     inputBook: ''
 }
 
-function bookReducer(state: any, action: any) {
+export const bookReducer = (state: any, action: any) => {
     switch(action.type) {
         case 'ADD':
             return { ...state };
@@ -15,6 +15,3 @@ function bookReducer(state: any, action: any) {
             return new Error(`Unhandled  action type ${action.type}`);
     }
 }
-
-export { initBookState }
-export default bookReducer
