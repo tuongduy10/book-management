@@ -1,4 +1,4 @@
-import { IAction } from "../../../../_cores/_interfaces/state";
+import { IAction } from "@/_cores/_interfaces/state";
 
 export const initPostState = {
     posts: [
