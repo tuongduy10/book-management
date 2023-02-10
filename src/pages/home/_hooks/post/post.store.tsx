@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, useReducer } from "react";
-import { postReducer, initPostState } from "../reducer/post.reducer";
+import { initPostState, postReducer } from "./post.reducer";
 
 const PostContext = createContext<any>(null);
 

@@ -1,4 +1,4 @@
-import { addBook, deleteBook, getBook, getBooks, updateBook } from "../api/book.api";
+import { addBook, deleteBook, getBook, getBooks, updateBook } from "../../../api/book.api";
 
 const baseURL = 'https://jsonplaceholder.typicode.com/Books';
 

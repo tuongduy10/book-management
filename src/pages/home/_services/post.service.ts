@@ -1,4 +1,4 @@
-import { addPost, deletePost, getPost, getPosts, updatePost } from "../api/post.api";
+import { addPost, deletePost, getPost, getPosts, updatePost } from "../../../api/post.api";
 
 const baseURL = 'https://jsonplaceholder.typicode.com/posts';
 

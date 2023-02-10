@@ -1,7 +1,10 @@
-import { usePostStore } from "../../../store/post.store";
+import { usePostStore } from "../_hooks/post/post.store";
 
 const PostList = () => {
     const [state, dispatch] = usePostStore();
+
+    console.log(state);
+
     return (
         <>
             <div>List</div>
@@ -10,6 +13,7 @@ const PostList = () => {
                     <li key={item.id}>{item.value}</li>
                 )) : null}
             </ul>
+            <button onClick={() => dispatch({type: "ADD_POST", payload: { id: 'no.4', value: 'Post 4' }})}>Add</button>
         </>
     )
 }

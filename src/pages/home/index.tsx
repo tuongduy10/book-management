@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Dashboard from '../../layouts/dashboard/dashboard';
-import { PostProvider } from '../../store/post.store';
-import PostList from './components/post-list';
+import Dashboard from '../../_shares/_layouts/dashboard/dashboard';
+import PostList from './_components/post-list';
+import { PostProvider } from './_hooks/post/post.store';
 export default function Index() {
     return (
         <PostProvider >
