@@ -1,9 +1,16 @@
-import { usePostStore } from "../_hooks/post/post.store";
+
+import { actions, stores } from "../_hooks/post";
 
 const PostList = () => {
-    const [state, dispatch] = usePostStore();
+    const [state, dispatch] = stores.usePostStore();
 
-    console.log(state);
+    const handleAddNew = () => {
+        const newVal = { 
+            id: 'no.4', 
+            value: 'Post 4' 
+        };
+        dispatch(actions.setPost(newVal));
+    }
 
     return (
         <>
@@ -13,7 +20,7 @@ const PostList = () => {
                     <li key={item.id}>{item.value}</li>
                 )) : null}
             </ul>
-            <button onClick={() => dispatch({type: "ADD_POST", payload: { id: 'no.4', value: 'Post 4' }})}>Add</button>
+            <button onClick={handleAddNew}>Add</button>
         </>
     )
 }

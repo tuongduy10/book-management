@@ -1,4 +1,6 @@
-import { IAction } from "@/_cores/_interfaces/state";
+// import { IAction } from "@/_cores/_interfaces/state";
+import { IAction } from "../../../../_cores/_interfaces/state";
+import { POST_ACTION } from "../../_enums/home.enum";
 
 export const initPostState = {
     posts: [
@@ -10,15 +12,15 @@ export const initPostState = {
 
 export function postReducer(state: any, action: IAction) {
     switch (action.type) {
-        case 'ADD_POST': {
+        case POST_ACTION.ADD_POST: {
             return {
                 ...state,
                 posts: [...state.posts, action.payload]
             };
         }
-        case 'UPDATE_POST':
+        case POST_ACTION.UPDATE_POST:
             return { ...state.posts };
-        case 'DELETE_POST':
+        case POST_ACTION.DELETE_POST:
             return { ...state.posts };
         default:
             return state;
