@@ -1,11 +1,8 @@
 import { addPost, deletePost, getPost, getPosts, updatePost } from "../../../api/post.api";
 
-const baseURL = 'https://jsonplaceholder.typicode.com/posts';
-
-
 export const getAllPosts = async () => {
     try {
-        const { data } = await getPosts();
+        const data = await getPosts();
         return data;
     } catch (error) {
         console.error(error);
@@ -15,7 +12,7 @@ export const getAllPosts = async () => {
 
 export const getPostById = async (id: any) => {
     try {
-        const { data } = await getPost(id);
+        const data = await getPost(id);
         return data;
     } catch (error) {
         console.error(error);
