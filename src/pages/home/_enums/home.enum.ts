@@ -6,6 +6,7 @@ export const POST_ACTION = {
 }
 
 export const BOOK_ACTION = {
+    FETCH_BOOK: "FETCH_BOOK",
     ADD_BOOK: "ADD_BOOK",
     UPDATE_BOOK: "UPDATE_BOOK",
     DELETE_BOOK: "DELETE_BOOK"
