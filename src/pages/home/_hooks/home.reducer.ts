@@ -1,12 +1,12 @@
-// import { IAction } from "@/_cores/_interfaces/state";
-import { IAction } from "../../../../_cores/_interfaces/state";
-import { POST_ACTION } from "../../_enums/home.enum";
+import { IAction } from "@/_cores/_interfaces/state.interface";
+import { POST_ACTION, BOOK_ACTION } from "@/pages/home/_enums/home.enum";
 
-export const initPostState = {
-    posts: [ ]
+export const initHomeState = {
+    posts: [],
+    books: []
 }
 
-export function postReducer(state: any, action: IAction) {
+export function homeReducer(state: any, action: IAction) {
     switch (action.type) {
         case POST_ACTION.FETCH_POST: {
             return {

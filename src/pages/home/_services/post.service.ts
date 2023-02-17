@@ -1,4 +1,4 @@
-import { addPost, deletePost, getPost, getPosts, updatePost } from "../../../api/post.api";
+import { addPost, deletePost, getPost, getPosts, updatePost } from "@/api/post.api";
 
 export const getAllPosts = async () => {
     try {

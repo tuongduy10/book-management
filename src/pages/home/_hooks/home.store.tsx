@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, useReducer } from "react";
-import { initPostState, postReducer } from "./post.reducer";
+import { initHomeState, homeReducer } from "./home.reducer";
 
 const PostContext = createContext<any>(null);
 
@@ -8,8 +8,8 @@ export const usePostStore = () => {
     return [state, dispatch];
 }
 
-export const PostProvider = ({children}: any) => {
-    const [state, dispatch] = useReducer(postReducer, initPostState);
+export const HomeProvider = ({children}: any) => {
+    const [state, dispatch] = useReducer(homeReducer, initHomeState);
     const providerValue = useMemo(() => [state, dispatch], [state, dispatch]);
     
     return (

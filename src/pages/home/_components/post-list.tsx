@@ -1,7 +1,7 @@
 
 import { useEffect } from "react";
-import { actions, stores } from "../_hooks/post";
-import { getAllPosts } from "../_services/post.service";
+import { actions, stores } from "@/pages/home/_hooks";
+import { getAllPosts } from "@/pages/home/_services/post.service";
 
 const PostList = () => {
     const [state, dispatch] = stores.usePostStore();
