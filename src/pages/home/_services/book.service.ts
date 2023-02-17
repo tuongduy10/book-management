@@ -1,8 +1,5 @@
 import { addBook, deleteBook, getBook, getBooks, updateBook } from "@/api/book.api";
 
-const baseURL = 'https://jsonplaceholder.typicode.com/Books';
-
-
 export const getAllBooks = async () => {
     try {
         const { data } = await getBooks();
