@@ -1,7 +1,8 @@
-import * as React from 'react';
+import { HomeProvider } from '@/_components/home/_hooks/home.store';
+import PostList from '@/_components/home/_partials/post-list';
 import Dashboard from '@/_shares/_layouts/dashboard/dashboard';
-import PostList from './_components/post-list';
-import { HomeProvider } from './_hooks/home.store';
+import * as React from 'react';
+
 export default function Index() {
     return (
         <HomeProvider >
